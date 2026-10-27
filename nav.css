@@ -1,0 +1,40 @@
+/* 顶部悬浮导航 */
+.top-nav{position:fixed;z-index:80;top:18px;left:50%;transform:translate(-50%,0);
+  display:flex;align-items:center;gap:3px;padding:8px 12px;
+  background:rgba(251,252,249,.94);border:1px solid rgba(23,32,30,.07);border-radius:999px;
+  box-shadow:0 22px 55px rgba(23,32,30,.15),0 4px 14px rgba(23,32,30,.07);
+  -webkit-backdrop-filter:blur(14px) saturate(1.08);backdrop-filter:blur(14px) saturate(1.08);
+  transition:transform .42s cubic-bezier(.22,1,.36,1),opacity .3s ease}
+.top-nav.is-hidden{transform:translate(-50%,calc(-100% - 28px));opacity:0;pointer-events:none}
+.top-nav-link{position:relative;display:flex;flex-direction:column;align-items:center;gap:5px;
+  padding:9px 18px 10px;border-radius:999px;color:#17201e;text-decoration:none;
+  transition:background .25s ease,color .25s ease}
+.top-nav-icon{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;
+  transition:stroke-width .25s ease}
+.top-nav-label{font:11px/1 Arial,Helvetica,sans-serif;letter-spacing:.08em;white-space:nowrap}
+.top-nav-link::after{content:"";position:absolute;left:50%;bottom:4px;width:3px;height:3px;border-radius:50%;
+  background:currentColor;opacity:0;transform:translate(-50%,3px);transition:opacity .25s ease,transform .25s ease}
+.top-nav-link:hover{background:#edf0ea}
+.top-nav-link.is-active{background:#f2f4ef}
+.top-nav-link.is-active .top-nav-icon{stroke-width:2.15}
+.top-nav-link.is-active .top-nav-label{font-weight:600}
+.top-nav-link.is-active::after{opacity:1;transform:translate(-50%,0)}
+.top-nav-link:focus-visible{outline:2px solid #17201e;outline-offset:-2px}
+#top,#about,#contact,#collection,#guestbook{scroll-margin-top:104px}
+@media (max-width:760px){
+  .top-nav{top:auto;bottom:calc(14px + env(safe-area-inset-bottom,0px));
+    box-shadow:0 -8px 30px rgba(23,32,30,.10),0 18px 42px rgba(23,32,30,.14)}
+  .top-nav.is-hidden{transform:translate(-50%,calc(100% + 28px))}
+  body{padding-bottom:calc(108px + env(safe-area-inset-bottom,0px))}
+  #top,#about,#contact,#collection,#guestbook{scroll-margin-top:24px}
+}
+@media (max-width:520px){
+  .top-nav{bottom:calc(12px + env(safe-area-inset-bottom,0px));gap:2px;padding:8px 10px}
+  .top-nav-link{padding:9px 15px 10px}
+}
+@media (max-width:340px){
+  .top-nav{gap:1px;padding:8px 6px}
+  .top-nav-link{padding:8px 9px 9px}
+  .top-nav-icon{width:20px;height:20px}
+  .top-nav-label{font-size:10px}
+}

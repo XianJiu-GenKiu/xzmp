@@ -1,0 +1,44 @@
+/* —— 收藏品区域 —— */
+.collection{width:100%;padding:64px 0 96px;border-top:1px solid #c9d2c6}
+.collection-eyebrow{font:10px/1.6 'Courier New',monospace;letter-spacing:.16em;color:#6b7a70;text-transform:uppercase;margin:0 0 10px}
+.collection-head{display:flex;align-items:flex-end;justify-content:space-between;gap:32px;margin-bottom:28px}
+.collection-title{font-size:clamp(24px,3vw,34px);font-weight:400;letter-spacing:-.03em;line-height:1.25;margin:0;color:#17201e}
+.collection-lede{max-width:350px;margin:0 0 4px;font-size:12px;line-height:1.8;letter-spacing:.02em;color:#6b7a70}
+.collection-list{list-style:none;margin:0;padding:0;border-top:1px solid #17201e}
+.collection-item{display:grid;grid-template-columns:46px minmax(0,1fr) 160px 20px;gap:22px;align-items:center;
+  padding:20px 16px;border-bottom:1px solid #c9d2c6;color:#17201e;text-decoration:none;
+  transition:background .3s ease,border-color .3s ease}
+.collection-list li:last-child .collection-item{border-bottom:0}
+.collection-index{font:10px/1 'Courier New',monospace;letter-spacing:.12em;color:#7d8b81;transition:color .3s ease}
+.collection-body{min-width:0;transition:transform .3s cubic-bezier(.22,1,.36,1)}
+.collection-line{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.collection-name{font-size:clamp(18px,2.1vw,22px);font-weight:400;letter-spacing:-.02em;line-height:1.25;transition:color .3s ease}
+.collection-tag{font:9px/1 'Courier New',monospace;letter-spacing:.12em;color:#7d8b81;border:1px solid #c9d2c6;padding:4px 6px 3px;transition:color .3s ease,border-color .3s ease}
+.collection-desc{display:block;margin-top:6px;font-size:12px;line-height:1.7;color:#6b7a70;transition:color .3s ease}
+.collection-domain{font:10px/1.4 'Courier New',monospace;letter-spacing:.03em;color:#7d8b81;text-align:right;overflow-wrap:anywhere;transition:color .3s ease}
+.collection-arrow{justify-self:end;font-size:15px;line-height:1;transition:transform .3s ease,color .3s ease}
+.collection-item:is(:hover,:focus-visible){background:#17201e;border-bottom-color:#17201e}
+.collection-item:is(:hover,:focus-visible) .collection-index{color:#a9b6ae}
+.collection-item:is(:hover,:focus-visible) .collection-body{transform:translateX(6px)}
+.collection-item:is(:hover,:focus-visible) .collection-name{color:#f4f2ea}
+.collection-item:is(:hover,:focus-visible) .collection-tag{color:#b9c4bd;border-color:#5a6a60}
+.collection-item:is(:hover,:focus-visible) .collection-desc{color:#b9c4bd}
+.collection-item:is(:hover,:focus-visible) .collection-domain{color:#a9b6ae}
+.collection-item:is(:hover,:focus-visible) .collection-arrow{color:#f4f2ea;transform:translate(3px,-3px)}
+.collection-item:focus-visible{outline:2px solid #f4f2ea;outline-offset:-4px}
+@media (max-width:760px){
+  .collection{padding:48px 0 72px}
+  .collection-head{flex-direction:column;align-items:flex-start;gap:10px;margin-bottom:22px}
+  .collection-lede{max-width:none;margin:0}
+  .collection-item{grid-template-columns:30px minmax(0,1fr) 18px;gap:3px 14px;padding:17px 12px}
+  .collection-index{grid-column:1;grid-row:1/3;align-self:start;padding-top:5px}
+  .collection-body{grid-column:2;grid-row:1}
+  .collection-domain{grid-column:2;grid-row:2;text-align:left;margin-top:0}
+  .collection-arrow{grid-column:3;grid-row:1/3}
+  .collection-name{font-size:19px}
+  .collection-desc{display:none}
+}
+@media (max-width:340px){
+  .collection-name{font-size:17px}
+  .collection-line{gap:8px}
+}

@@ -1,0 +1,50 @@
+/* —— 留言板区域 —— */
+.guestbook{width:100%;padding:64px 0 96px;border-top:1px solid #c9d2c6}
+.guestbook-eyebrow{font:10px/1.6 'Courier New',monospace;letter-spacing:.16em;color:#6b7a70;text-transform:uppercase;margin:0 0 10px}
+.guestbook-title{font-size:clamp(24px,3vw,34px);font-weight:400;letter-spacing:-.03em;line-height:1.25;margin:0;color:#17201e}
+.guestbook-body{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:56px;align-items:start;margin-top:32px}
+.guestbook-form{background:#f3f4f0;border:1px solid #c9d2c6;padding:26px 24px 22px}
+.guestbook-field{display:block;margin:0 0 20px}
+.guestbook-label{display:flex;align-items:center;gap:8px;font:10px/1 'Courier New',monospace;letter-spacing:.14em;color:#6b7a70;text-transform:uppercase;margin-bottom:4px}
+.guestbook-optional{color:#9aa79d;letter-spacing:.04em}
+.guestbook-input{display:block;width:100%;border:0;border-bottom:1px solid #c9d2c6;border-radius:0;background:transparent;color:#17201e;
+  font:15px/1.6 Arial,Helvetica,sans-serif;padding:9px 0 10px;outline:none;transition:border-color .25s ease}
+.guestbook-input::placeholder{color:#9aa79d}
+.guestbook-input:focus{border-bottom-color:#17201e}
+.guestbook-textarea{min-height:116px;max-height:260px;resize:vertical}
+.guestbook-actions{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin-top:2px}
+.guestbook-status{flex:1 0 100%;order:-1;min-height:16px;font-size:11px;line-height:1.5;letter-spacing:.02em;color:#6b7a70}
+.guestbook-status.is-ok{color:#2f6b4f}
+.guestbook-status.is-error{color:#a3442e}
+.guestbook-status:empty{display:none}
+.guestbook-counter{font:10px/1 'Courier New',monospace;letter-spacing:.06em;color:#9aa79d;white-space:nowrap}
+.guestbook-submit{flex:0 0 auto;margin-left:auto;border:1px solid #17201e;background:#17201e;color:#f4f2ea;font:13px/1 Arial,Helvetica,sans-serif;
+  letter-spacing:.04em;padding:12px 20px;cursor:pointer;transition:background .25s ease,border-color .25s ease,opacity .25s ease}
+.guestbook-submit:hover{background:#2c3a37;border-color:#2c3a37}
+.guestbook-submit:focus-visible{outline:2px solid #17201e;outline-offset:3px}
+.guestbook-submit:disabled{opacity:.55;cursor:default}
+.guestbook-panel{min-width:0}
+.guestbook-panel-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding-bottom:10px;border-bottom:1px solid #17201e;
+  font:10px/1.4 'Courier New',monospace;letter-spacing:.14em;color:#6b7a70;text-transform:uppercase}
+.guestbook-count{color:#17201e;letter-spacing:.06em}
+.guestbook-list{list-style:none;margin:0;padding:0;max-height:420px;overflow-y:auto;overscroll-behavior:contain;
+  scrollbar-width:thin;scrollbar-color:#b9c4bd transparent}
+.guestbook-list::-webkit-scrollbar{width:6px}
+.guestbook-list::-webkit-scrollbar-thumb{background:#c9d2c6}
+.guestbook-item{padding:18px 2px 17px;border-bottom:1px solid #d5dcd3}
+.guestbook-item:last-child{border-bottom:0}
+.guestbook-item-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;margin-bottom:7px}
+.guestbook-item-name{font-size:14px;font-weight:600;letter-spacing:.01em;color:#17201e;overflow-wrap:anywhere}
+.guestbook-item-time{font:10px/1 'Courier New',monospace;letter-spacing:.06em;color:#7d8b81;white-space:nowrap}
+.guestbook-item-message{margin:0;font-size:14px;line-height:1.9;color:#3f4d48;white-space:pre-wrap;overflow-wrap:anywhere}
+.guestbook-item.is-new{animation:guestbook-in .45s cubic-bezier(.22,1,.36,1) both}
+@keyframes guestbook-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.guestbook-empty{margin:18px 0 0;font-size:13px;line-height:1.8;color:#7d8b81}
+.guestbook-empty[hidden]{display:none}
+@media (max-width:760px){
+  .guestbook{padding:48px 0 72px}
+  .guestbook-body{grid-template-columns:1fr;gap:28px;margin-top:24px}
+  .guestbook-form{padding:20px 18px 18px}
+  .guestbook-submit{padding:13px 18px}
+  .guestbook-list{max-height:none;overflow:visible}
+}
